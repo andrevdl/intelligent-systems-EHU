@@ -1,0 +1,68 @@
+1. Title: Connect-4 opening database
+
+2. Source Information
+   (a) Original owners of database: John Tromp (tromp@cwi.nl)
+   (b) Donor of database: John Tromp (tromp@cwi.nl)
+ 
+4. Relevant Information:
+   This database contains all legal 8-ply positions in the game of
+   connect-4 in which neither player has won yet, and in which the next
+   move is not forced.
+
+5. Number of Instances: 30,400 training, 4,000 test
+
+6. Number of Attributes: 42, each corresponding to one connect-4 square
+
+7. Attribute Information: (x=player x has taken, o=player o has taken, b=blank)
+
+   The board is numbered like  6 . . . . . . .
+                               5 . . . . . . .
+                               4 . . . . . . .
+                               3 . . . . . . .
+                               2 . . . . . . .
+                               1 . . . . . . .
+                                 a b c d e f g
+
+    1. a1: {x,o,b} {2,1,0}
+    2. a2: {x,o,b} {2,1,0}
+    3. a3: {x,o,b} {2,1,0}
+    4. a4: {x,o,b} {2,1,0}
+    5. a5: {x,o,b} {2,1,0}
+    6. a6: {x,o,b} {2,1,0}
+    7. b1: {x,o,b} {2,1,0}
+    8. b2: {x,o,b} {2,1,0}
+    9. b3: {x,o,b} {2,1,0}
+   10. b4: {x,o,b} {2,1,0}
+   11. b5: {x,o,b} {2,1,0}
+   12. b6: {x,o,b} {2,1,0}
+   13. c1: {x,o,b} {2,1,0}
+   14. c2: {x,o,b} {2,1,0}
+   15. c3: {x,o,b} {2,1,0}
+   16. c4: {x,o,b} {2,1,0}
+   17. c5: {x,o,b} {2,1,0}
+   18. c6: {x,o,b} {2,1,0}
+   19. d1: {x,o,b} {2,1,0}
+   20. d2: {x,o,b} {2,1,0}
+   21. d3: {x,o,b} {2,1,0}
+   22. d4: {x,o,b} {2,1,0}
+   23. d5: {x,o,b} {2,1,0}
+   24. d6: {x,o,b} {2,1,0}
+   25. e1: {x,o,b} {2,1,0}
+   26. e2: {x,o,b} {2,1,0}
+   27. e3: {x,o,b} {2,1,0}
+   28. e4: {x,o,b} {2,1,0}
+   29. e5: {x,o,b} {2,1,0}
+   30. e6: {x,o,b} {2,1,0}
+   31. f1: {x,o,b} {2,1,0}
+   32. f2: {x,o,b} {2,1,0}
+   33. f3: {x,o,b} {2,1,0}
+   34. f4: {x,o,b} {2,1,0}
+   35. f5: {x,o,b} {2,1,0}
+   36. f6: {x,o,b} {2,1,0}
+   37. g1: {x,o,b} {2,1,0}
+   38. g2: {x,o,b} {2,1,0}
+   39. g3: {x,o,b} {2,1,0}
+   40. g4: {x,o,b} {2,1,0}
+   41. g5: {x,o,b} {2,1,0}
+   42. g6: {x,o,b} {2,1,0}
+   43. Class: {positive=1 (i.e., win_for_x), negative=0 (i.e., draw or loss)}
