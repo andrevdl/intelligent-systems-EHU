@@ -1,0 +1,11 @@
+from sklearn import svm
+classifier = svm.SVC(kernel='rbf')
+
+classifier1 = KNeighborsClassifier(n_neighbors=1)
+classifier2 = KNeighborsClassifier(n_neighbors=2)
+classifier3 = tree.DecisionTreeClassifier()
+
+estimators = [
+    ('K-NN, N=1', classifier1),
+    ('K-NN, N=2', classifier2),
+    ('Decision tree', classifier3)]

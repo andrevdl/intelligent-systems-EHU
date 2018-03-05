@@ -21,14 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Classifier.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ensemble.py" />
     <Compile Include="import_csv.py" />
     <Compile Include="intelligent_Systems_ehu.py" />
-    <Compile Include="lab4.py" />
-    <Compile Include="lab5.py" />
-    <Compile Include="lab7.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
@@ -44,6 +42,7 @@
     <Content Include="data\tic_tac_toe\README.txt" />
     <Content Include="data\tic_tac_toe\tic-tac-toe.test.csv" />
     <Content Include="data\tic_tac_toe\tic-tac-toe.training.csv" />
+    <Content Include="info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
