@@ -3,6 +3,8 @@ from sklearn.metrics import precision_recall_fscore_support
 import numpy as np
 from import_csv import load_data_from_csv
 
+from sklearn.metrics import *
+
 class Classifier(object):
     """description of class"""
 
@@ -14,6 +16,7 @@ class Classifier(object):
         classifier.fit(self.training_instances, self.training_labels)
         predicted_test_labels = classifier.predict(self.test_instances)
         if export:
+            print(confusion_matrix(self.test_labels, predicted_test_labels))
             print(Classifier.average_report(self.test_labels, predicted_test_labels, digits=3))
         else:
             print(classification_report(self.test_labels, predicted_test_labels, digits=3))

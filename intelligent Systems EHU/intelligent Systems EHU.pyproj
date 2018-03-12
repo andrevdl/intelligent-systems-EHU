@@ -31,6 +31,8 @@
   <ItemGroup>
     <Folder Include="data\" />
     <Folder Include="data\connect4\" />
+    <Folder Include="data\custom\" />
+    <Folder Include="data\reviews\" />
     <Folder Include="data\tic_tac_toe\" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +41,10 @@
     <Content Include="data\connect4\README" />
     <Content Include="data\credit_card_test.csv" />
     <Content Include="data\credit_card_training.csv" />
+    <Content Include="data\custom\test.csv" />
+    <Content Include="data\custom\training.csv" />
+    <Content Include="data\reviews\reviews_Video_Games_test.csv" />
+    <Content Include="data\reviews\reviews_Video_Games_training.csv" />
     <Content Include="data\tic_tac_toe\README.txt" />
     <Content Include="data\tic_tac_toe\tic-tac-toe.test.csv" />
     <Content Include="data\tic_tac_toe\tic-tac-toe.training.csv" />
