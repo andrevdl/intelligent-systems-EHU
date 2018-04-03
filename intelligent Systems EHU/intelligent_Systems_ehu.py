@@ -18,8 +18,6 @@ TIC_TRAINING = 'data/tic_tac_toe/tic-tac-toe.training.csv'
 TIC_TEST = 'data/tic_tac_toe/tic-tac-toe.test.csv'
 REVIEWS_TRAINING = 'data/reviews/reviews_Video_Games_training.csv'
 REVIEWS_TEST = 'data/reviews/reviews_Video_Games_test.csv'
-CUSTOM_TRAINING = 'data/custom/training.csv';
-CUSTOM_TEST = 'data/custom/test.csv';
 
 def execute(classifier, task=0):
     if task == 0:
