@@ -13,6 +13,7 @@ from sklearn.svm import SVC
 #import matplotlib.pyplot as plt
 
 import pandas as pd
+from pandas import *
 import numpy as np
 import re
 import json
@@ -99,6 +100,23 @@ if __name__ == '__main__':
             'features__vect__binary': (True, False),
             'features__lex__polarity__binary': (True, False),
             'features__lex__polarity__enabled': (True, False),
+            'classifier': [SVC()],
+            'classifier__kernel': ('linear', 'rbf')
+        },
+        {
+            'features__vect': [tfidfVect],
+            'features__vect__ngram_range': ((1, 1), (1, 2), (2, 2)),
+            'features__vect__use_idf': (True, False),
+            'features__lex__polarity__binary': (True, False),
+            'features__lex__polarity__enabled': (True, False),
+            'classifier': [SVC()],
+            'classifier__kernel': ('linear', 'rbf')
+        },
+        {
+            'features__vect__ngram_range': ((1, 1), (1, 2), (2, 2)),
+            'features__vect__binary': (True, False),
+            'features__lex__polarity__binary': (True, False),
+            'features__lex__polarity__enabled': (True, False),
             'classifier': [randomForest],
             'classifier__n_estimators': (np.arange(10, 301, 10))
         },
@@ -110,32 +128,15 @@ if __name__ == '__main__':
             'features__lex__polarity__enabled': (True, False),
             'classifier': [randomForest],
             'classifier__n_estimators': (np.arange(10, 301, 10))
-        },
-        {
-            'features__vect__ngram_range': ((1, 1), (1, 2), (2, 2)),
-            'features__vect__binary': (True, False), ## add lex rows !!!
-            'features__lex__polarity__binary': (True, False),
-            'features__lex__polarity__enabled': (True, False),
-            'classifier': [SVC(kernel='linear')]
-        },
-        {
-            'features__vect': [tfidfVect],
-            'features__vect__ngram_range': ((1, 1), (1, 2), (2, 2)),
-            'features__vect__use_idf': (True, False), ## add lex rows !!!
-            'features__lex__polarity__binary': (True, False),
-            'features__lex__polarity__enabled': (True, False),
-            'classifier': [SVC(kernel='rbf')]
         }
     ]
 
-    grid = GridSearchCV(pipe, param_grid, n_jobs=4, return_train_score=False, verbose=5, cv=10)
+    grid = GridSearchCV(pipe, param_grid, n_jobs=8, return_train_score=False, verbose=5) #, cv=10)
 
     reviews = pd.read_table('data/raw/reviews_Video_Games_merged.raw.tsv', names=['content', 'label']) # training and then test
     grid.fit(reviews['content'], reviews['label'])
 
-    with open('results.json', 'w') as outfile:
-        json.dump(grid.cv_results_, outfile)
-
-    print(grid.cv_results_)
+    df = DataFrame(grid.cv_results_)
+    df.to_csv('results.csv', sep=';', float_format='%.3f', decimal=',')
 
     #X_train, X_test, y_train, y_test = train_test_split(reviews['content'], reviews['label'], test_size=0.5, random_state=0);
